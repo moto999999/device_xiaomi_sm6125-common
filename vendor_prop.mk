@@ -68,7 +68,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_scaler=0 \
     vendor.display.enable_default_color_mode=0 \
     vendor.display.enable_null_display=0 \
-    vendor.gralloc.disable_ubwc=0
+    vendor.gralloc.disable_ubwc=0 \
+    debug.sf.early_app_phase_offset_ns=500000 \
+    debug.sf.early_gl_phase_offset_ns=3000000 \
+    debug.sf.early_gl_app_phase_offset_ns=15000000 \
+    debug.sf.early_phase_offset_ns=500000
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
