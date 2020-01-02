@@ -6,7 +6,7 @@
 
 BOARD_VENDOR := xiaomi
 
-DEVICE_PATH := device/xiaomi/ginkgo
+VENDOR_PATH := device/xiaomi/sm6125-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -48,7 +48,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_SOURCE := kernel/xiaomi/ginkgo
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6125
 TARGET_KERNEL_CONFIG := vendor/ginkgo-perf_defconfig
 
 # Platform
@@ -74,7 +74,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth/include
 BOARD_HAVE_BLUETOOTH_QCOM := true
 TARGET_USE_QTI_BT_STACK := true
 
@@ -95,7 +95,7 @@ TARGET_ENABLE_MEDIADRM_64 := true
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -111,9 +111,9 @@ TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
@@ -122,7 +122,7 @@ TARGET_PROVIDES_KEYMASTER := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_ginkgo
+TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit_ginkgo
 TARGET_RECOVERY_DEVICE_MODULES := libinit_ginkgo
 
 # Partitions
@@ -154,11 +154,11 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_xiaomi
-TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -177,9 +177,9 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/public
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
 # Telephony
 TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
@@ -188,7 +188,7 @@ TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
 PRODUCT_VENDOR_MOVE_ENABLED := true
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_PRODUCT_PROP += $(VENDOR_PATH)/product.prop
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -209,4 +209,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/xiaomi/ginkgo/BoardConfigVendor.mk
+-include vendor/xiaomi/sm6125-common/BoardConfigVendor.mk

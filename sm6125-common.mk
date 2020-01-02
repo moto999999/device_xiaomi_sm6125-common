@@ -5,7 +5,7 @@
 #
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/xiaomi/ginkgo/ginkgo-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/sm6125-common/sm6125-common-vendor.mk)
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
@@ -19,7 +19,7 @@ TARGET_SCREEN_WIDTH := 1080
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-pe
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint feature
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.ginkgo
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6125
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -270,16 +270,12 @@ PRODUCT_COPY_FILES += \
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-    
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/trinket-idp-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/trinket-idp-snd-card_Button_Jack.kl \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.ginkgo
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -303,7 +299,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.ginkgo
+    android.hardware.power@1.2-service.xiaomi_sm6125
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf \
