@@ -49,7 +49,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.gralloc.enable_fb_ubwc=1 \
+    debug.egl.hw=0 \
+    debug.mdpcomp.logs=0 \
+    debug.sf.hw=0 \
     ro.opengles.version=196610 \
     ro.vendor.display.sensortype=2 \
     vendor.display.comp_mask=0 \
