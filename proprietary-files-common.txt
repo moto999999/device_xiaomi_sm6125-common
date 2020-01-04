@@ -1170,6 +1170,7 @@ vendor/lib64/libgpu_tonemapper.so
 vendor/lib64/libgralloccore.so
 vendor/lib64/libgrallocutils.so
 vendor/lib64/libqdMetaData.so
+vendor/lib64/libdrm.so
 vendor/lib64/libdrmutils.so
 vendor/lib64/libsdedrm.so
 vendor/lib64/libsdmcore.so
@@ -1183,6 +1184,7 @@ vendor/lib/hw/memtrack.trinket.so
 vendor/lib/libdisplaydebug.so
 vendor/lib/libdisplayqos.so
 vendor/lib/libdpps.so
+vendor/lib/libdrm.so
 vendor/lib/libgpu_tonemapper.so
 vendor/lib/libgralloccore.so
 vendor/lib/libgrallocutils.so
