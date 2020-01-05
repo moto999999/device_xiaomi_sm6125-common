@@ -17,3 +17,6 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
 
 on property:ro.crypto.state=encrypted
     enable vendor.fps_hal
+
+on property:ro.crypto.state=unencrypted
+    enable vendor.fps_hal
