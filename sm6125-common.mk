@@ -142,7 +142,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
-    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-impl.xiaomi_sm6125 \
     android.hardware.camera.provider@2.4-service \
     vendor.qti.hardware.camera.device@1.0.vendor \
     libdng_sdk.vendor \
